@@ -1,0 +1,64 @@
+.horizontal-container {
+    display: flex;
+    gap: 100px; /* gap between sections */
+    width: 100%;
+    height: 100vh;
+    padding: 20px;
+    box-sizing: border-box;
+    font-family: "Segoe UI", sans-serif;
+    background: #f4f6f8;
+  }
+  
+  /* Shared styles for each section */
+  .section {
+    flex: 1;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    transition: transform 0.2s ease;
+  }
+  
+  .section:hover {
+    transform: translateY(-5px); /* slight hover lift */
+  }
+  
+  .section h2 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+  }
+  
+  .section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .section li,
+  .section p {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 12px;
+    line-height: 1.5;
+  }
+  
+  /* Optional: add subtle color tags to identify sections */
+  .today-tests h2 {
+    color: #007bff;
+    
+  }
+  
+  .recent-tests h2 {
+    color: #17a2b8;
+  }
+  
+  .last-rank h2 {
+    color: #28a745;
+  }
+  

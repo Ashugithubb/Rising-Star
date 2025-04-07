@@ -1,0 +1,106 @@
+/* Center the login box */
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(135deg, #2c3e50, #4ca1af); /* Soft blue gradient */
+}
+
+/* Login box */
+.login-box {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+  width: 350px;
+  text-align: center;
+}
+
+/* Title */
+.login-box h2 {
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: #333;
+}
+
+/* Input fields */
+.input-group {
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: bold;
+  color: #333;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+  outline: none;
+  transition: border 0.3s ease-in-out;
+}
+
+.input-group input:focus {
+  border-color: #007bff;
+}
+
+/* Login button */
+.login-btn {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  background: #007bff;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  transition: background 0.3s ease-in-out;
+}
+
+.login-btn:hover {
+  background: #0056b3;
+}
+
+/* Forgot Password link */
+p {
+  margin-top: 12px;
+  font-size: 14px;
+}
+
+p a {
+  text-decoration: none;
+  color: #007bff;
+  font-weight: bold;
+}
+
+p a:hover {
+  text-decoration: underline;
+}
+
+/* Contact Section */
+/* Contact Section */
+.contact-section {
+  width: 100%;
+  background: #1e3a8a; /* Blue background */
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+/* Arrange items in a single horizontal line */
+.contact-section p {
+  display: inline-block;
+  margin: 0 15px; /* Soft spacing between items */
+  font-size: 16px;
+}
