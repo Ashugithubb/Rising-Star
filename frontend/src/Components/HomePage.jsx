@@ -1,37 +1,22 @@
 import { useNavigate } from "react-router-dom";
 import "../styles/HomePage.css"; // Ensure this file exists
+import "../styles/HomePage.css";
+import Navbar from "../Components/Navbar"; // Make sure the path is correct
+
 const HomePage = () => {
-  const navigate = useNavigate();
-
-  const handleLogout = () => {
-    navigate("/"); // Redirect to login page after logout
-  };
-
   return (
     <div className="homepage-container">
-      {/* Navigation Bar */}
-      <nav className="navbar">
-        <h1 className="logo">Rising Star</h1>
-        <ul className="nav-links">
-          <li><button onClick={() => navigate("/home")}>Home</button></li>
-          <li><button onClick={() => navigate("/tests")}>Tests</button></li>
-          <li><button onClick={() => navigate("/fee-management")}>Fee Management</button></li>
-          <li><button onClick={() => navigate("/about")}>About</button></li>
-          <li><button onClick={() => navigate("/contact")}>Contact</button></li>
-          <li><button className="logout-btn" onClick={handleLogout}>Logout</button></li>
-        </ul>
-      </nav>
+      <Navbar />
 
       {/* WhatsApp Group Join Section */}
       <div className="whatsapp-section">
-          <h3>📢 Join Our WhatsApp Group!</h3>
-          <p>Stay updated with announcements and important updates.</p>
-          <div className="whatsapp-links">
-            <a href="https://chat.whatsapp.com/YOUR_LINK_11" target="_blank" rel="noopener noreferrer" className="whatsapp-btn">Join Class 11 Group</a>
-            <a href="https://chat.whatsapp.com/IWSAPr5gf9GEz57y0KWG2G" target="_blank" rel="noopener noreferrer" className="whatsapp-btn">Join Class 12 Group</a>
-          </div>
+        <h3>📢 Join Our WhatsApp Group!</h3>
+        <p>Stay updated with announcements and important updates.</p>
+        <div className="whatsapp-links">
+          <a href="https://chat.whatsapp.com/YOUR_LINK_11" target="_blank" rel="noopener noreferrer" className="whatsapp-btn">Join Class 11 Group</a>
+          <a href="https://chat.whatsapp.com/IWSAPr5gf9GEz57y0KWG2G" target="_blank" rel="noopener noreferrer" className="whatsapp-btn">Join Class 12 Group</a>
         </div>
-      
+      </div>
 
       {/* Announcement Box */}
       <div className="announcement">
@@ -43,7 +28,7 @@ const HomePage = () => {
         </ul>
       </div>
 
-      {/* Contact Section at the bottom */}
+      {/* Contact Section */}
       <footer className="contact-section">
         <h3>📞 Contact Us</h3>
         <p>Email: itsray650@gmail.com</p>
@@ -55,3 +40,4 @@ const HomePage = () => {
 };
 
 export default HomePage;
+

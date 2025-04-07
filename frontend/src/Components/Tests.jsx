@@ -1,59 +1,82 @@
 import React from "react";
 import "../styles/Tests.css";
+import Navbar from "../Components/Navbar"; // ✅ Import Navbar
+
+
+
+const testData = [
+  { id: 1, name: "Physics Chapter 1", date: "2025-04-07", time: "10:00 AM" },
+  { id: 2, name: "Math Algebra", date: "2025-04-08", time: "12:00 PM" },
+  { id: 3, name: "Chemistry Organic", date: "2025-04-06", time: "02:00 PM" },
+];
+
+const mockRanks = {
+  3: [
+    { rank: 1, name: "Aryan", score: 95 },
+    { rank: 2, name: "Meera", score: 91 },
+    { rank: 3, name: "Rohan", score: 89 },
+  ],
+};
 
 const Tests = () => {
-  const todayTests = [
-    { subject: "Physics", time: "10:00 AM" },
-    { subject: "Maths", time: "12:00 PM" },
-  ];
+  const today = new Date().toISOString().split("T")[0];
 
-  const recentTests = [
-    { subject: "Chemistry", date: "6 April" },
-    { subject: "Biology", date: "4 April" },
-  ];
+  const todayTests = testData.filter(test => test.date === today);
 
-  const lastRank = {
-    studentName: "Rohan Sharma",
-    rank: 2,
-    score: "18 / 20",
-    subject: "Physics",
-  };
+  const pastTests = testData
+    .filter(test => test.date < today)
+    .sort((a, b) => new Date(b.date) - new Date(a.date));
+
+  const recentTest = pastTests[0];
+  const recentTestRanks = recentTest ? mockRanks[recentTest.id] || [] : [];
 
   return (
-    <div className="horizontal-container">
-      {/* Section 1: Today’s Tests */}
-      <section className="section today-tests">
-        <h2>📅 Today's Tests</h2>
-        <ul>
-          {todayTests.map((test, index) => (
-            <li key={index}>
-              <strong>{test.subject}</strong> at {test.time}
-            </li>
-          ))}
-        </ul>
-      </section>
+    <>
+    <Navbar/>
+      {/* Today Tests - Top Left */}
+      <div className="today-tests-container">
+        <h2>📅 Today Tests</h2>
+        {todayTests.length > 0 ? (
+          <ul>
+            {todayTests.map(test => (
+              <li key={test.id}>
+                <strong>{test.name}</strong> — {test.time}
+              </li>
+            ))}
+          </ul>
+        ) : (
+          <p>No tests scheduled for today.</p>
+        )}
+      </div>
 
-      {/* Section 2: Recent Tests */}
-      <section className="section recent-tests">
-        <h2>🕒 Recent Tests</h2>
-        <ul>
-          {recentTests.map((test, index) => (
-            <li key={index}>
-              <strong>{test.subject}</strong> - {test.date}
-            </li>
-          ))}
-        </ul>
-      </section>
+      {/* Recent Test - Center */}
+      <div className="recent-test-container">
+        <h2>🕒 Recent Test</h2>
+        {recentTest ? (
+          <p>
+            <strong>{recentTest.name}</strong> — {recentTest.date} at {recentTest.time}
+          </p>
+        ) : (
+          <p>No past tests found.</p>
+        )}
+      </div>
 
-      {/* Section 3: Last Test Rank */}
-      <section className="section last-rank">
-        <h2>🏆 Last Test Rank</h2>
-        <p><strong>Student:</strong> {lastRank.studentName}</p>
-        <p><strong>Rank:</strong> #{lastRank.rank}</p>
-        <p><strong>Score:</strong> {lastRank.score}</p>
-        <p><strong>Subject:</strong> {lastRank.subject}</p>
-      </section>
-    </div>
+      {/* Last Test Ranks - Bottom Center */}
+      <div className="last-test-ranks-container">
+        <h2>🏆 Last Test Ranks</h2>
+        {recentTestRanks.length > 0 ? (
+          <ol>
+            {recentTestRanks.map(rank => (
+              <li key={rank.rank}>
+                #{rank.rank} - {rank.name} ({rank.score}%)
+              </li>
+            ))}
+          </ol>
+        ) : (
+          <p>No rank data available.</p>
+        )}
+      </div>
+    </>
   );
 };
 
