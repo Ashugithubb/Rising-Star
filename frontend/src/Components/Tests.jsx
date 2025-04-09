@@ -1,22 +1,22 @@
 import React from "react";
 import "../styles/Tests.css";
-import Navbar from "../Components/Navbar"; // ✅ Import Navbar
-
-
+import Navbar from "../Components/Navbar";
+import { Link } from "react-router-dom";
 
 const testData = [
-  { id: 1, name: "Physics Chapter 1", date: "2025-04-07", time: "10:00 AM" },
-  { id: 2, name: "Math Algebra", date: "2025-04-08", time: "12:00 PM" },
+  { id: 1, name: "Physics Unit 1 Test", date: "2025-04-07", time: "10:00 AM" },
+  { id: 2, name: "Physics Unit 2 Test", date: "2025-04-08", time: "12:00 PM" },
   { id: 3, name: "Chemistry Organic", date: "2025-04-06", time: "02:00 PM" },
 ];
 
 const mockRanks = {
-  3: [
-    { rank: 1, name: "Aryan", score: 95 },
-    { rank: 2, name: "Meera", score: 91 },
-    { rank: 3, name: "Rohan", score: 89 },
-  ],
+  1: [
+    { rank: 1, name: "Rohit", score: 88 },
+    { rank: 2, name: "Isha", score: 84 },
+    { rank: 3, name: "Dev", score: 79 },
+  ]
 };
+
 
 const Tests = () => {
   const today = new Date().toISOString().split("T")[0];
@@ -32,7 +32,8 @@ const Tests = () => {
 
   return (
     <>
-    <Navbar/>
+      <Navbar />
+
       {/* Today Tests - Top Left */}
       <div className="today-tests-container">
         <h2>📅 Today Tests</h2>
@@ -40,7 +41,9 @@ const Tests = () => {
           <ul>
             {todayTests.map(test => (
               <li key={test.id}>
-                <strong>{test.name}</strong> — {test.time}
+                <Link to={`/test/${test.id}`} className="test-link">
+                  <strong>{test.name}</strong> — {test.time}
+                </Link>
               </li>
             ))}
           </ul>
@@ -54,7 +57,9 @@ const Tests = () => {
         <h2>🕒 Recent Test</h2>
         {recentTest ? (
           <p>
-            <strong>{recentTest.name}</strong> — {recentTest.date} at {recentTest.time}
+            <Link to={`/test/${recentTest.id}`} className="test-link">
+              <strong>{recentTest.name}</strong> — {recentTest.date} at {recentTest.time}
+            </Link>
           </p>
         ) : (
           <p>No past tests found.</p>
@@ -68,7 +73,7 @@ const Tests = () => {
           <ol>
             {recentTestRanks.map(rank => (
               <li key={rank.rank}>
-                #{rank.rank} - {rank.name} ({rank.score}%)
+                {rank.name}  ({rank.score}%)
               </li>
             ))}
           </ol>

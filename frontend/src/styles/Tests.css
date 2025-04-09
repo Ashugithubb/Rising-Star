@@ -7,7 +7,7 @@
   position: absolute;
   top: 15%;
   left: 20px;
-  background-color: #0e866a;
+  background-color: #c2cecb;
   padding: 24px 30px;
   border-radius: 8px;
   box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
@@ -90,3 +90,13 @@
   font-size: 15px;
   margin-bottom: 6px;
 }
+
+.test-link {
+  text-decoration: none;
+  color: #007bff;
+}
+
+.test-link:hover {
+  text-decoration: underline;
+}
+/* styles/Tests.css */

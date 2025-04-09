@@ -2,12 +2,40 @@ import { useNavigate } from "react-router-dom";
 import "../styles/HomePage.css"; // Ensure this file exists
 import "../styles/HomePage.css";
 import Navbar from "../Components/Navbar"; // Make sure the path is correct
+import React, { useEffect, useState } from "react";
+import axios from "axios";
 
 const HomePage = () => {
+  const [message, setMessage] = useState("");
+  useEffect(() => {
+    axios.get("http://localhost:3000/risingstars") // 🔁 adjust port if different
+      .then((res) => {
+        setMessage(res.data.message);
+      })
+      .catch((err) => {
+        console.error("Error fetching message:", err);
+      });
+  }, []);
+
+  useEffect(() => {
+    // Send Hello Sir to backend
+    axios.post("http://localhost:3000/risingstars", {
+      message: "Hello sir"
+    })
+    .then(res => {
+      console.log("Response from backend:", res.data.reply);
+    })
+    .catch(err => {
+      console.error("Error sending message:", err);
+    });
+  }, []);
+
+
+
   return (
     <div className="homepage-container">
       <Navbar />
-
+      <h1 className="welcome-message">{message}👋</h1>
       {/* WhatsApp Group Join Section */}
       <div className="whatsapp-section">
         <h3>📢 Join Our WhatsApp Group!</h3>
