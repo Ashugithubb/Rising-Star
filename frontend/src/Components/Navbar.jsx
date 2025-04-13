@@ -1,5 +1,5 @@
 // src/components/Navbar.jsx
-import { useNavigate } from "react-router-dom";
+import { useNavigate,Link } from "react-router-dom";
 import "../styles/Navbar.css";
 
 const Navbar = () => {
@@ -13,12 +13,12 @@ const Navbar = () => {
     <nav className="navbar">
       <h1 className="logo">Rising Star</h1>
       <ul className="nav-links">
-        <li><button onClick={() => navigate("/home")}>Home</button></li>
-        <li><button onClick={() => navigate("/tests")}>Tests</button></li>
-        <li><button onClick={() => navigate("/fee-management")}>Fee Management</button></li>
-        <li><button onClick={() => navigate("/about")}>About</button></li>
-        <li><button onClick={() => navigate("/contact")}>Contact</button></li>
-        <li><button className="logout-btn" onClick={handleLogout}>Logout</button></li>
+      <li><Link to="/home">Home</Link></li>
+      <li><Link to="/tests">Tests</Link></li>
+      <li><Link to="/fee">Fees Managment</Link></li>
+      <li><Link to="/about">About</Link></li>
+      <li><Link to="/contact">Contact</Link></li>
+      <li><button className="logout-btn" onClick={handleLogout}>Logout</button></li>
       </ul>
     </nav>
   );

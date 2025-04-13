@@ -35,7 +35,8 @@ const HomePage = () => {
   return (
     <div className="homepage-container">
       <Navbar />
-      <h1 className="welcome-message">{message}👋</h1>
+      {/* <h1 className="welcome-message">{message}👋</h1> */}
+      <h1 className="welcome-message">Heloo Rising Stars👋</h1>
       {/* WhatsApp Group Join Section */}
       <div className="whatsapp-section">
         <h3>📢 Join Our WhatsApp Group!</h3>

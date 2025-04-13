@@ -1,0 +1,75 @@
+/* src/styles/StudentList.css */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #33679b;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .student-list-container {
+    max-width: 900px;
+    margin: 50px auto;
+    padding: 20px;
+    text-align: center;
+    background: #31b160;
+    border-radius: 8px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  .student-list-container h1 {
+    margin-bottom: 20px;
+    color: #333;
+    font-size: 2rem;
+    border-bottom: 2px solid #4CAF50;
+    display: inline-block;
+    padding-bottom: 5px;
+  }
+  
+  .student-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  .student-table thead {
+    background: linear-gradient(90deg, #4CAF50, #81C784);
+    color:black;
+  }
+  
+  .student-table th,
+  .student-table td {
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    text-align: center;
+    color: black;
+  }
+  
+  .student-table tbody tr {
+    transition: background-color 0.3s ease;
+  }
+  
+  .student-table tbody tr:nth-child(even) {
+    background-color: #f3f3f3;
+  }
+  
+  .student-table tbody tr:hover {
+    background-color: #e0f7fa;
+  }
+  
+  .student-table th {
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  
+  @media (max-width: 768px) {
+    .student-list-container {
+      margin: 20px;
+      padding: 15px;
+    }
+  
+    .student-table th, .student-table td {
+      padding: 10px;
+    }
+  }
+  
