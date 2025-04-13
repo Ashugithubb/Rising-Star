@@ -1,40 +1,61 @@
 // src/Pages/TestPage.jsx
-import React from 'react';
-import { useParams } from 'react-router-dom';
-
-const mockQuestions = {
-  1: [
-    { id: 101, question: "What is Newton's second law?", options: ["F=ma", "E=mc²", "V=IR", "None"], correct: 0 },
-    { id: 102, question: "What is the unit of force?", options: ["Watt", "Pascal", "Newton", "Joule"], correct: 2 },
-  ],
-  2: [
-    { id: 201, question: "What is the value of x in 2x + 3 = 7?", options: ["2", "3", "4", "5"], correct: 0 },
-  ],
-};
+import React, { useState } from 'react';
+import questions from "./Questions.json";
+import Navbar from './Navbar';
+import "../styles/TestPage.css";
 
 const TestPage = () => {
-  const { testId } = useParams();
-  const questions = mockQuestions[testId] || [];
+  const [userAnswers, setUserAnswers] = useState({});
+  const [score, setScore] = useState(null);
+
+  const handleOptionChange = (questionIndex, selectedOption) => {
+    setUserAnswers({ ...userAnswers, [questionIndex]: selectedOption });
+  };
+
+  const handleSubmit = () => {
+    let newScore = 0;
+    questions.forEach((q, index) => {
+      if (userAnswers.hasOwnProperty(index) && userAnswers[index] === q.correctAnswer) {
+        newScore += 1;
+      }
+    });
+    setScore(newScore);
+  };
+  
 
   return (
-    <div className="test-page">
-      <h2>📝 Test Questions</h2>
-      {questions.length === 0 ? (
-        <p>No questions available.</p>
+    <>
+      <Navbar />
+      {score === null ? (
+        <div className="test-wrapper">
+          <h1 id="heading">Physics Unit-1 Electrostatics</h1>
+
+          {questions.map((q, index) => (
+            <div className="question-container" key={index}>
+              <h3 className="question-title">{q.question}</h3>
+              {q.options.map((opt, i) => (
+                <label key={i} className="option">
+                  <input
+                    type="radio"
+                    name={`q${index}`}
+                    value={opt}
+                    checked={userAnswers[index] === opt}
+                    onChange={() => handleOptionChange(index, opt)}
+                  />
+                  {opt}
+                </label>
+              ))}
+            </div>
+          ))}
+
+          <button className="submit-btn" onClick={handleSubmit}>Submit Test</button>
+        </div>
       ) : (
-        questions.map((q, index) => (
-          <div key={q.id} className="question">
-            <p><strong>Q{index + 1}:</strong> {q.question}</p>
-            {q.options.map((opt, i) => (
-              <div key={i}>
-                <input type="radio" id={`q${q.id}_${i}`} name={`q${q.id}`} value={i} />
-                <label htmlFor={`q${q.id}_${i}`}>{opt}</label>
-              </div>
-            ))}
-          </div>
-        ))
+        <div className="score-container">
+          <h2 className="score-text">🎯 Your Score: {score} / {questions.length}</h2>
+        </div>
       )}
-    </div>
+    </>
   );
 };
 

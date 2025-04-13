@@ -1,0 +1,69 @@
+/* TestPage.css */
+/* Add this to TestPage.css */
+#heading {
+    background-color: rgb(126, 126, 153);
+    display: inline-block;
+    text-align: center;
+    margin-left: 35%; /* center horizontally */
+    padding: 10px 20px;
+    border-radius: 8px;
+  } 
+.test-wrapper {
+    margin-top: 80px;
+    padding-top: 1200px; /* adjust based on your navbar height */
+    padding-bottom: 20px;
+  }
+  
+.question-container {
+    margin-top: 20px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #557b86;
+  }
+  
+  .question-title {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .option {
+    display: block;
+    margin: 8px 0;
+    font-size: 16px;
+  }
+  
+  .option input {
+    margin-right: 10px;
+  }
+  
+
+  .score-container {
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .score-text {
+    font-size: 32px;
+    font-weight: bold;
+    color: rgb(176, 26, 166);
+    text-align: center;
+  }
+  
+  
+  .submit-btn {
+    display: block;
+    margin: 30px auto;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 6px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  

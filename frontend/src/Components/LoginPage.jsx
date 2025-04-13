@@ -31,6 +31,7 @@ const LoginPage = () => {
               value={userid}
               onChange={(e) => setUserid(e.target.value)}
               required
+              placeholder="UserId"
             />
           </div>
           <div className="input-group">
@@ -40,6 +41,7 @@ const LoginPage = () => {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               required
+              placeholder="Password"
             />
           </div>
           <button type="submit" className="login-btn">Login</button>

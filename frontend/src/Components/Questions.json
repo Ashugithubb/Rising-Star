@@ -1,0 +1,78 @@
+[
+    {
+      "question": "Which among the following has highest velocity?",
+      "options": ["Hurricane", "Tornado", "Typhoon", "Cyclone"],
+      "answer": "Tornado"
+    },
+    {
+      "question": "In which of the following situations the force applied by the weight of a person becomes zero in a lift?",
+      "options": [
+        "Lift moves up with an acceleration of 9.8 meter per sq. second",
+        "Lift moves down with an acceleration of 9.8 meter per sq. second",
+        "Lift moves up with an speed of 9.8 meter per second",
+        "Lift moves up with down speed of 9.8 meter per second"
+      ],
+      "answer": "Lift moves down with an acceleration of 9.8 meter per sq. second"
+    },
+    {
+      "question": "If the distance between the earth and the sun becomes one-fourth of what it is now, the gravitational force exerted on the earth by the sun would be:",
+      "options": [
+        "One-fourth of what it is now",
+        "One-sixteenth of what it is now",
+        "Sixteen times of what it is now",
+        "Four times of what it is now"
+      ],
+      "answer": "Sixteen times of what it is now"
+    },
+    {
+      "question": "Two pieces of ice at 0°C would freeze together if pressed against each other and then released. In this context, which among the following is the correct principle in action in this?",
+      "options": [
+        "The melting point of pure ice decreases with pressure.",
+        "The melting point of pure ice increases with Pressure",
+        "The melting point of pure ice first increases, then decreases with pressure",
+        "The melting point of pure ice first decreases then increases with pressure"
+      ],
+      "answer": "The melting point of pure ice decreases with pressure."
+    },
+    {
+      "question": "Due to which of the following phenomena, the coloured glass appears white when crushed into fine powder?",
+      "options": ["Total Internal Reflection", "Diffraction", "Scattering", "Refraction"],
+      "answer": "Scattering"
+    },
+    {
+      "question": "What is the value of Triple point of water?",
+      "options": ["273.16 K", "273.16° C", "0° C", "-273.16 K"],
+      "answer": "273.16 K"
+    },
+    {
+      "question": "What is the work done by centripetal force in case of Uniform Circular Motion?",
+      "options": ["1 joule", "0 joule", "Depends on the magnitude of Force", "None of the above"],
+      "answer": "0 joule"
+    },
+    {
+      "question": "Which of the following is/are independent of mass during the projectile motion?",
+      "options": ["Time of Flight", "Horizontal Range", "Maximum Height", "All of the above"],
+      "answer": "All of the above"
+    },
+    {
+      "question": "The work done by a variable force is given by:",
+      "options": [
+        "area under the force curve and the displacement axis",
+        "square of the area under the force curve and the displacement axis",
+        "natural log of the area under the force curve and the displacement axis",
+        "twice the area under the force curve and the displacement axis"
+      ],
+      "answer": "area under the force curve and the displacement axis"
+    },
+    {
+      "question": "Which of the following is correct about the value of acceleration due to gravity?",
+      "options": [
+        "it is greater at mountains than in plains",
+        "it is lesser at mountains than in plains",
+        "it is equal for mountains and plains",
+        "None of the above"
+      ],
+      "answer": "it is lesser at mountains than in plains"
+    }
+  ]
+  
