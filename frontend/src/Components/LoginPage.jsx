@@ -1,21 +1,27 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "../styles/LoginPage.css"; // Ensure this file exists
+import axios from "axios";
 
 const LoginPage = () => {
-  const [userid, setUserid] = useState(""); // Fixed: Initialized as an empty string
+  const [userId, setUserid] = useState(""); // Fixed: Initialized as an empty string
   const [password, setPassword] = useState("");
+  const [message,setMessage] = useState("");
   const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("UserId:", userid, "Password:", password);
-
-    // Perform authentication here (dummy authentication for now)
-    if (userid === "12207196" && password === "password") {
-      navigate("/home"); // Redirect to Home Page after login
-    } else {
-      alert("Invalid credentials!");
+    setMessage('');
+    try{
+      
+      const response = await axios.post("http://localhost:3000/login",{ userId,password});
+      setMessage(response.data);
+      if (response.data === "Login Successfull") {
+        navigate("/home"); // Replace with your route
+      }
+    }
+    catch(err){
+        console.log(err.response?.data || "Login failed");
     }
   };
 
@@ -27,8 +33,8 @@ const LoginPage = () => {
           <div className="input-group">
             <label>User ID</label>
             <input
-              type="number" // Fixed: Correct input type
-              value={userid}
+              type="text" // Fixed: Correct input type
+              value={userId}
               onChange={(e) => setUserid(e.target.value)}
               required
               placeholder="UserId"
@@ -46,6 +52,11 @@ const LoginPage = () => {
           </div>
           <button type="submit" className="login-btn">Login</button>
         </form>
+        {message && (
+        <p style={{ marginTop: '1rem', color: message.includes('successful') ? 'green' : 'red' }}>
+          {message}
+        </p>
+      )}
       </div>
     </div>
   );

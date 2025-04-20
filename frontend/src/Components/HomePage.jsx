@@ -58,7 +58,7 @@ const HomePage = () => {
       </div>
 
       {/* Contact Section */}
-      <footer className="contact-section">
+      <footer className="contact-section" id="contact">
         <h3>📞 Contact Us</h3>
         <p>Email: itsray650@gmail.com</p>
         <p>Phone: +91 9878719602</p>
